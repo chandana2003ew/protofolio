@@ -11,7 +11,7 @@ function App() {
       ),
       React.createElement("div", { className: "card" },
         React.createElement("h2", null, "About Me"),
-        React.createElement("p", null, "I’m a 3rd-year CSE student passionate about AI, ML, and full-stack development.")
+        React.createElement("p", null, "I'm a third-year CSE student who enjoys building websites and exploring full-stack development. I love solving problems, learning new tools, and turning ideas into clean, functional projects. Always curious, always improving.")
       ),
       React.createElement("div", { className: "card" },
         React.createElement("h2", null, "Projects"),
