@@ -10,7 +10,7 @@ function App() {
           alt: "Profile"
         }),
         React.createElement("h1", null, "Chandana V"),
-        React.createElement("p", null, "AI/ML Enthusiast | Web Developer")
+      
       ),
       React.createElement("div", { className: "card" },
         React.createElement("h2", null, "About Me"),
