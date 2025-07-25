@@ -5,10 +5,7 @@ function App() {
   return (
     React.createElement("main", null,
       React.createElement("div", { className: "card" },
-        React.createElement("img", {
-          src: "https://via.placeholder.com/100",
-          alt: "Profile"
-        }),
+      
         React.createElement("h1", null, "Chandana V"),
       
       ),
