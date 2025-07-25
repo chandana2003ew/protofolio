@@ -26,8 +26,8 @@ function App() {
       ),
       React.createElement("div", { className: "card" },
         React.createElement("h2", null, "Contact"),
-        React.createElement("p", null, "📧 chandana@email.com"),
-        React.createElement("p", null, "📱 +91-XXXXXXXXXX")
+        React.createElement("p", null, "vchandana00@email.com"),
+        React.createElement("p", null, "+91-9113541977")
       )
     )
   );
