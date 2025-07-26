@@ -17,7 +17,7 @@ function App() {
         React.createElement("h2", null, "About Me"),
         React.createElement("p", null, "I’m a 3rd-year CSE student passionate about AI, ML, and full-stack development."),
 
-        React.createElement("h2", null, "Contact"),
+       
         React.createElement("p", null, "Email:vchandana00@gmail.com"),
         React.createElement("p", null, "Phone no:+91-9113541977"),
         // LinkedIn and GitHub Links
