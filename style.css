@@ -5,7 +5,6 @@ body {
   background: linear-gradient(to right bottom, #fde9d9, #e9f5e6); /* Soft peach to pale green */
   color: #333;
 }
-/* ... rest of your style.css ... */
 
 .card {
   background-color: white;
@@ -66,4 +65,90 @@ li {
 
 li:hover {
   background-color: #e6e6fa; /* Light background on hover */
+}
+
+/* --- Social Links Styling --- */
+.social-links {
+  text-align: center; /* Center the social links */
+  margin-top: 1.5rem; /* Add some space above the links */
+  display: flex; /* Use flexbox to align links horizontally */
+  justify-content: center; /* Center the flex items */
+  gap: 15px; /* Add space between the links */
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+}
+
+.social-links a {
+  color: #6a1b9a; /* Use your primary heading color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Make links a bit bolder */
+  font-size: 1.1rem; /* Slightly larger font for links */
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for hover and scale */
+  display: flex; /* Use flex for potential icon + text alignment */
+  align-items: center; /* Vertically center icon and text */
+}
+
+.social-links a:hover {
+  color: #8e44ad; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  /* text-decoration: underline; */ /* Removed underline on hover as transform is a nice alternative */
+}
+
+/* Optional: Styles for specific card groups (uncomment and customize if desired) */
+/* These classes were added in the JS for potential specific styling */
+
+.profile-card {
+  /* You could give this a slightly different background or border */
+  /* background-color: #fcfcfc; */
+}
+
+.about-contact-card {
+  /* This card now contains both About Me and Contact */
+  /* Maybe a different border-left color or a more subtle shadow */
+  /* border-left: 8px solid #a77ac4; */
+}
+
+.projects-card {
+  /* You could make this stand out, or keep it consistent */
+}
+
+/* --- Responsive Adjustments (Highly Recommended) --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0.8rem; /* Reduce overall padding on smaller screens */
+  }
+
+  .card {
+    padding: 1.5rem; /* Reduce card padding */
+    margin-bottom: 1rem; /* Adjust card margin */
+    border-radius: 1rem; /* Slightly smaller border-radius */
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller H1 on mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Smaller H2 on mobile */
+  }
+
+  p, li {
+    font-size: 0.95rem; /* Slightly smaller body text */
+  }
+
+  .social-links {
+    flex-direction: column; /* Stack links vertically on small screens */
+    gap: 10px; /* Reduce gap when stacked */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .card {
+    padding: 1rem;
+  }
 }
