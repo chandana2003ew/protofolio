@@ -2,42 +2,49 @@ import React from "https://cdn.skypack.dev/react";
 import ReactDOM from "https://cdn.skypack.dev/react-dom";
 
 function App() {
+  const handleProjectsClick = () => {
+    // Navigate to the projects page
+    window.location.href = 'projects.html';
+  };
+
   return (
-    React.createElement("main", null,
-      React.createElement("div", { className: "card profile-card" }, // Added profile-card class
+    React.createElement("div", { className: "book-page" }, // Main container for the book aesthetic
+      React.createElement("div", { className: "profile-section" },
         React.createElement("img", {
-          src: "prof pic.jpg", // Changed the source to your uploaded picture
-          alt: "Chandana V Profile" // Updated alt text for better accessibility
+          src: "prof pic.jpg", // Your profile picture
+          alt: "Chandana V Profile"
         }),
         React.createElement("h1", null, "Chandana V"),
-        React.createElement("p", null, "AI/ML Enthusiast | Web Developer")
+        React.createElement("p", {className: "tagline"}, "AI/ML Enthusiast | Web Developer") // Added tagline class
       ),
 
-      React.createElement("div", { className: "card about-contact-card" }, // Grouping About Me and Contact
-        React.createElement("h2", null, "About Me"),
-        React.createElement("p", null, "I’m a 3rd-year CSE student passionate about AI, ML, and full-stack development."),
+      React.createElement("div", { className: "contact-section" },
+        React.createElement("h2", null, "Reach Out"), // More inviting heading
+        React.createElement("p", {className: "contact-item"},
+          React.createElement("span", {className: "icon"}, "📧"), // Email icon
+          React.createElement("a", {href: "mailto:vchandana00@gmail.com"}, "vchandana00@gmail.com") // Email link
+        ),
+        React.createElement("p", {className: "contact-item"},
+          React.createElement("span", {className: "icon"}, "📱"), // Phone icon
+          React.createElement("a", {href: "tel:+919113541977"}, "+91-9113541977") // Phone link
+        )
+      ),
 
-        React.createElement("h2", null, "Contact"),
-        React.createElement("p", null, "📧 vchandana00@gmail.com"),
-        React.createElement("p", null, "📱 +91-9113541977"),
-        // LinkedIn and GitHub Links
-        React.createElement("p", { className: "social-links" },
-          React.createElement("a", { href: "https://www.linkedin.com/in/chandana-v-a4322231a", target: "_blank", rel: "noopener noreferrer" },
-            "🔗 LinkedIn"
+      React.createElement("div", { className: "social-section" },
+        React.createElement("h2", null, "Connect With Me"), // New heading
+        React.createElement("div", { className: "social-links-container" }, // Container for social links
+          React.createElement("a", { href: "https://www.linkedin.com/in/chandana-v-a4322231a", target: "_blank", rel: "noopener noreferrer", className: "social-link" }, // Added social-link class
+            React.createElement("span", {className: "icon"}, "🔗"), "LinkedIn"
           ),
-          React.createElement("span", { style: { margin: '0 10px' } }, "|"), // Separator
-          React.createElement("a", { href: "https://github.com/chandana2003ew", target: "_blank", rel: "noopener noreferrer" },
-            "🐙 GitHub"
+          React.createElement("a", { href: "https://github.com/chandana2003ew", target: "_blank", rel: "noopener noreferrer", className: "social-link" }, // Added social-link class
+            React.createElement("span", {className: "icon"}, "🐙"), "GitHub"
           )
         )
       ),
 
-      React.createElement("div", { className: "card projects-card" }, // Projects section moved to second
-        React.createElement("h2", null, "Projects"),
-        React.createElement("ul", null,
-          React.createElement("li", null, "Farm Management System"),
-          React.createElement("li", null, "Portfolio Website"),
-          React.createElement("li", null, "AI Model Deployment")
+      React.createElement("div", { className: "projects-link-section" }, // New section for Projects button
+        React.createElement("button", { className: "projects-button", onClick: handleProjectsClick },
+          "View My Projects ➡️"
         )
       )
     )
