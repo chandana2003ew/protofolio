@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #f9f2e4;
+  color: #2f2f2f;
+  padding: 2rem;
+}
+
+.book {
+  display: flex;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.page {
+  width: 50%;
+  padding: 2rem;
+  background: #fffdf5;
+  border-right: 1px solid #ddd;
+}
+
+.page.right {
+  border-right: none;
+}
+
+.page h1, .page h2 {
+  font-family: 'Playfair Display', serif;
+  color: #4b2e83;
+}
+
+.page a {
+  color: #6a1b9a;
+  text-decoration: none;
+}
+
+.page a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+.details {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.back {
+  display: block;
+  margin-bottom: 1rem;
+  color: #333;
+}
