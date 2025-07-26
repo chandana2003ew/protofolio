@@ -1,154 +1,292 @@
+/* Import Google Fonts (Playfair Display for headings, Lora for body) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap');
+
+:root {
+  /* Elegant Color Palette for Book Aesthetic */
+  --color-page-bg: #fdfaf5; /* Off-white, creamy paper color */
+  --color-border-light: #e0d9d2; /* Soft, subtle border for the page */
+  --color-text-dark: #3a3a3a; /* Dark charcoal for primary text */
+  --color-text-medium: #5c5c5c; /* Medium grey for secondary text */
+  --color-accent: #a0522d; /* Earthy, warm accent color (e.g., terracotta) */
+  --color-link-hover: #c47c49; /* Lighter shade of accent for hover */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  --color-button-bg: #4a90e2; /* A professional blue for the button */
+  --color-button-hover: #3a7bd1; /* Darker blue on hover */
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lora', serif; /* Body font */
   margin: 0;
-  padding: 1rem;
-  background: linear-gradient(to right bottom, #fde9d9, #e9f5e6); /* Soft peach to pale green */
-  color: #333;
+  padding: 2rem; /* Generous padding around the entire book page */
+  background: linear-gradient(to bottom right, #e0eafc, #f7fafc); /* Very light, subtle gradient background */
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the "book" vertically on the screen */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
-.card {
-  background-color: white;
-  border-radius: 1.2rem; /* Slightly larger border-radius */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-  padding: 2rem; /* Increased padding */
-  margin-bottom: 1.5rem; /* Increased margin */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added transition */
+/* --- Main "Book Page" Container --- */
+.book-page {
+  background-color: var(--color-page-bg); /* Creamy background for the page */
+  border: 1px solid var(--color-border-light); /* Subtle border */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 10px 30px var(--color-shadow), 0 0 0 10px rgba(255, 255, 255, 0.5) inset; /* Soft outer shadow, subtle inner "page" shadow */
+  padding: 3rem; /* Ample internal padding */
+  max-width: 700px; /* Max width for book page */
+  width: 100%; /* Responsive width */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between main sections */
+  position: relative; /* For potential pseudo-elements for page curl */
+  transition: transform 0.5s ease-out; /* Smooth transition for potential entrance animation */
 }
 
-.card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+/* Optional: Slight 3D effect on load */
+/* .book-page {
+    transform: rotateY(5deg) scale(0.95);
+}
+.book-page.loaded {
+    transform: rotateY(0deg) scale(1);
+} */
+
+/* --- Profile Section --- */
+.profile-section {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Space below profile */
 }
 
-img {
+.profile-section img {
   border-radius: 50%;
+  width: 150px; /* Larger profile image */
+  height: 150px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto 1.5rem; /* Increased bottom margin */
-  border: 4px solid #8e44ad; /* Added a colored border around image */
-  box-shadow: 0 0 15px rgba(142, 68, 173, 0.4); /* Shadow for image */
+  margin: 0 auto 1.5rem;
+  border: 5px solid var(--color-accent); /* Accent color border */
+  box-shadow: 0 0 25px rgba(160, 82, 45, 0.3); /* Soft glow from accent */
+  transition: transform 0.3s ease-in-out;
 }
 
-h1 {
-  margin: 0.8rem 0; /* Adjusted margin */
-  text-align: center;
-  color: #6a1b9a; /* Primary heading color */
-  font-size: 2.5rem; /* Larger font size for h1 */
-  letter-spacing: 1px;
+.profile-section img:hover {
+    transform: scale(1.05); /* Zoom in on hover */
 }
 
-h2 {
-  margin: 1rem 0 0.8rem; /* Adjusted margin */
-  text-align: center;
-  color: #8e44ad; /* Secondary heading color */
-  font-size: 1.8rem; /* Larger font size for h2 */
-}
-
-p, li {
-  color: #555; /* Slightly lighter text color */
-  font-size: 1rem; /* Slightly larger font size */
-  line-height: 1.6; /* Improved line spacing */
-}
-
-ul {
-  list-style-type: none; /* Remove default bullet points */
-  padding: 0;
-}
-
-li {
-  background-color: #f9f9f9; /* Background for list items */
+.profile-section h1 {
+  font-family: 'Playfair Display', serif; /* Heading font */
+  font-size: 3.5rem; /* Prominent name */
+  font-weight: 700;
+  color: var(--color-accent); /* Accent color for name */
   margin-bottom: 0.5rem;
-  padding: 0.7rem 1rem;
-  border-radius: 0.5rem;
-  border-left: 5px solid #8e44ad; /* Accent border on list items */
-  transition: background-color 0.3s ease;
+  line-height: 1;
 }
 
-li:hover {
-  background-color: #e6e6fa; /* Light background on hover */
+.profile-section .tagline {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  color: var(--color-text-medium);
+  margin-top: 0;
+  font-style: italic; /* Italicize tagline */
 }
 
-/* --- Social Links Styling --- */
-.social-links {
-  text-align: center; /* Center the social links */
-  margin-top: 1.5rem; /* Add some space above the links */
-  display: flex; /* Use flexbox to align links horizontally */
-  justify-content: center; /* Center the flex items */
-  gap: 15px; /* Add space between the links */
-  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+/* --- General Headings --- */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-top: 2.5rem; /* More space above headings */
+  margin-bottom: 1.5rem;
+  position: relative; /* For underline effect */
 }
 
-.social-links a {
-  color: #6a1b9a; /* Use your primary heading color for links */
-  text-decoration: none; /* Remove underline */
-  font-weight: 600; /* Make links a bit bolder */
-  font-size: 1.1rem; /* Slightly larger font for links */
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for hover and scale */
-  display: flex; /* Use flex for potential icon + text alignment */
-  align-items: center; /* Vertically center icon and text */
+/* Decorative underline for headings */
+h2::after {
+  content: '';
+  display: block;
+  width: 60px; /* Short underline */
+  height: 2px;
+  background-color: var(--color-accent);
+  margin: 0.8rem auto 0; /* Centered below heading */
 }
 
-.social-links a:hover {
-  color: #8e44ad; /* Darker shade on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-  /* text-decoration: underline; */ /* Removed underline on hover as transform is a nice alternative */
+/* --- Contact Section --- */
+.contact-section {
+  padding-top: 1rem;
 }
 
-/* Optional: Styles for specific card groups (uncomment and customize if desired) */
-/* These classes were added in the JS for potential specific styling */
-
-.profile-card {
-  /* You could give this a slightly different background or border */
-  /* background-color: #fcfcfc; */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center contact items */
+  font-size: 1.15rem;
+  color: var(--color-text-dark);
+  margin-bottom: 0.8rem;
 }
 
-.about-contact-card {
-  /* This card now contains both About Me and Contact */
-  /* Maybe a different border-left color or a more subtle shadow */
-  /* border-left: 8px solid #a77ac4; */
+.contact-item .icon {
+  margin-right: 10px;
+  font-size: 1.4em; /* Larger icons */
+  color: var(--color-accent); /* Icon color */
 }
 
-.projects-card {
-  /* You could make this stand out, or keep it consistent */
+.contact-item a {
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
-/* --- Responsive Adjustments (Highly Recommended) --- */
+.contact-item a:hover {
+  color: var(--color-accent);
+}
+
+/* --- Social Section --- */
+.social-section {
+  padding-top: 1rem;
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px; /* Space between social links */
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-link .icon {
+  font-size: 1.5em; /* Larger social icons */
+  margin-right: 8px;
+  color: var(--color-accent); /* Social icon color */
+}
+
+.social-link:hover {
+  color: var(--color-accent);
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+/* --- Projects Link Section --- */
+.projects-link-section {
+  text-align: center;
+  margin-top: 3rem; /* More space before the button */
+}
+
+.projects-button {
+  background-color: var(--color-button-bg); /* Blue button background */
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px; /* Pill-shaped button */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); /* Soft shadow for button */
+}
+
+.projects-button:hover {
+  background-color: var(--color-button-hover); /* Darker blue on hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4); /* Stronger shadow */
+}
+
+.projects-button:active {
+  transform: translateY(0); /* Press effect */
+  box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+}
+
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   body {
-    padding: 0.8rem; /* Reduce overall padding on smaller screens */
+    padding: 1rem;
+    align-items: flex-start; /* Align to top on smaller screens to prevent overflow */
   }
 
-  .card {
-    padding: 1.5rem; /* Reduce card padding */
-    margin-bottom: 1rem; /* Adjust card margin */
-    border-radius: 1rem; /* Slightly smaller border-radius */
+  .book-page {
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px var(--color-shadow);
   }
 
-  h1 {
-    font-size: 2rem; /* Smaller H1 on mobile */
+  .profile-section img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .profile-section .tagline {
+    font-size: 1.1rem;
   }
 
   h2 {
-    font-size: 1.5rem; /* Smaller H2 on mobile */
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
-  p, li {
-    font-size: 0.95rem; /* Slightly smaller body text */
+  .contact-item, .social-link {
+    font-size: 1rem;
   }
 
-  .social-links {
-    flex-direction: column; /* Stack links vertically on small screens */
-    gap: 10px; /* Reduce gap when stacked */
+  .projects-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .book-page {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .profile-section img {
+    width: 100px;
+    height: 100px;
+  }
+
   h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
-  .card {
-    padding: 1rem;
+  .profile-section .tagline {
+    font-size: 1rem;
+  }
+
+  .contact-item, .social-link {
+    font-size: 0.95rem;
+    flex-direction: column; /* Stack contact/social items vertically if needed */
+    text-align: center;
+    gap: 5px;
+  }
+  .contact-item .icon, .social-link .icon {
+    margin-right: 0; /* Remove margin right if stacked */
+  }
+
+  .social-links-container {
+    flex-direction: column;
+    gap: 15px;
   }
 }
