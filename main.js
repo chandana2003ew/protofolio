@@ -18,16 +18,16 @@ function App() {
         React.createElement("p", null, "I’m a 3rd-year CSE student passionate about AI, ML, and full-stack development."),
 
         React.createElement("h2", null, "Contact"),
-        React.createElement("p", null, "📧 vchandana00@gmail.com"),
-        React.createElement("p", null, "📱 +91-9113541977"),
+        React.createElement("p", null, "Email:vchandana00@gmail.com"),
+        React.createElement("p", null, "Phone no:+91-9113541977"),
         // LinkedIn and GitHub Links
         React.createElement("p", { className: "social-links" },
           React.createElement("a", { href: "https://www.linkedin.com/in/chandana-v-a4322231a", target: "_blank", rel: "noopener noreferrer" },
-            "🔗 LinkedIn"
+            "🔗LinkedIn"
           ),
-          React.createElement("span", { style: { margin: '0 10px' } }, "|"), // Separator
+          React.createElement("span", { style: { margin: '0 10px' } }), // Separator
           React.createElement("a", { href: "https://github.com/chandana2003ew", target: "_blank", rel: "noopener noreferrer" },
-            "🐙 GitHub"
+            "GitHub"
           )
         )
       ),
