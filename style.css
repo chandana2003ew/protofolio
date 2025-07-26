@@ -1,27 +1,68 @@
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif; /* Changed font */
   margin: 0;
   padding: 1rem;
-  background-color: #f7f7f7;
+  background: linear-gradient to bottom right, #f0e6fa, #e0f2f7; /* Added gradient background */
+  color: #333; /* Darker body text color */
 }
+
 .card {
   background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
+  border-radius: 1.2rem; /* Slightly larger border-radius */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  padding: 2rem; /* Increased padding */
+  margin-bottom: 1.5rem; /* Increased margin */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added transition */
 }
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
 img {
   border-radius: 50%;
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem; /* Increased bottom margin */
+  border: 4px solid #8e44ad; /* Added a colored border around image */
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.4); /* Shadow for image */
 }
-h1, h2 {
-  margin: 0.5rem 0;
+
+h1 {
+  margin: 0.8rem 0; /* Adjusted margin */
   text-align: center;
+  color: #6a1b9a; /* Primary heading color */
+  font-size: 2.5rem; /* Larger font size for h1 */
+  letter-spacing: 1px;
 }
+
+h2 {
+  margin: 1rem 0 0.8rem; /* Adjusted margin */
+  text-align: center;
+  color: #8e44ad; /* Secondary heading color */
+  font-size: 1.8rem; /* Larger font size for h2 */
+}
+
 p, li {
-  color: #444;
-  font-size: 14px;
+  color: #555; /* Slightly lighter text color */
+  font-size: 1rem; /* Slightly larger font size */
+  line-height: 1.6; /* Improved line spacing */
+}
+
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9; /* Background for list items */
+  margin-bottom: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border-left: 5px solid #8e44ad; /* Accent border on list items */
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #e6e6fa; /* Light background on hover */
 }
